@@ -5,6 +5,7 @@ interface IRecipe extends Document {
   description: string;
 }
 
+// TODO
 const RecipeSchema: Schema = new Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
