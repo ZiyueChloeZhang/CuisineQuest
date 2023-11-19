@@ -12,10 +12,11 @@ const RecipeSchema: Schema = new Schema({
   name: { type: String, required: true },
   time: { hours: { type: Number, required: true }, 
   minutes: { type: Number, required: true } },
-  title: { type: String, required: true },
   servings: { type: Number, required: true },
   likes: { type: Number, required: true },
-  ingredients: [{ type: String, required: true }],
+  ingredients: [ { name: { type: String, required: true }, 
+    quantity: { type: String, required: true }} ],
+  instructions: [{ type: String, required: true }],
   tags: [{ type: String, required: true }],
   restrictions: [{ type: String, required: true }]
 });
