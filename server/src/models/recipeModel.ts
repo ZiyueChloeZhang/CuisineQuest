@@ -16,7 +16,9 @@ const RecipeSchema: Schema = new Schema({
     quantity: { type: String, required: true }} ],
   instructions: [{ type: String, required: true }],
   tags: [{ type: String, required: true }],
-  restrictions: [{ type: String, required: true }]
+  restrictions: [{ type: String, required: true }],
+  img: { type: String },
+  location: { type: String, required: true}
 });
 
 const Recipe = mongoose.model<IRecipe>('Recipe', RecipeSchema);
