@@ -13,20 +13,20 @@ export default RecipeCard = ({_id, name, likes, time, img}) => {
     <View style={styles.card}>
       <Image
         style={styles.image}
-        source={{ uri: img }}
+        source={{ uri: img || 'https://theme-assets.getbento.com/sensei/cc1b795.sensei/assets/images/catering-item-placeholder-704x520.png' }}
       />
       <Text style={styles.title}>{name}</Text>
       <View style={styles.iconRow}>
-        <TouchableOpacity onPress={onPress} style={[styles.iconText, styles.red]}>
+        <TouchableOpacity onPress={onPress} style={[styles.iconBox, styles.red]}>
           {
-            isLiked ? (<FontAwesome5 name="heart" size={24} solid color='red'/>)
-            :< FontAwesome5 size={24} name="heart" outlined color='red'/> 
+            isLiked ? (<FontAwesome5 name="heart"  solid color='red'/>)
+            :< FontAwesome5  name="heart" outlined color='red'/> 
           }
-           <Text>{likes}</Text>
+           <Text style={styles.iconText}>{likes}</Text>
         </TouchableOpacity>
-        <View style={styles.iconText}>
-          <FontAwesome5 name="clock" size={24} outlined/>
-          <Text>{time.hours} hr {time.minutes} min</Text>
+        <View style={styles.iconBox}>
+          <FontAwesome5 name="clock" outlined/>
+          <Text style={styles.iconText}>{time.hours} hr {time.minutes} min</Text>
         </View>
       </View>
     </View>
@@ -35,32 +35,43 @@ export default RecipeCard = ({_id, name, likes, time, img}) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'grey',
-    padding: 20,
-    marginVertical: 10,
-    marginHorizontal: 20,
-    borderRadius: 20,
-    gap: 20
+    height: 168,
+    borderRadius: 16,
+    borderColor: '#414337',
+    borderWidth: 4,
+    gap: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    marginHorizontal: 11,
+    marginVertical: 10
   },
   title: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
+    fontFamily: 'Cochin'
   },
   image: {
     width: '100%', 
-    height: 150,
-    width: 200,
-    borderRadius: 10,
+    height: 88,
+    width: 120,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#414337',
   },
   iconRow: {
      flexDirection: 'row',
      justifyContent: 'space-between',
      alignItems: 'center'
   },
-  iconText: {
+  iconBox: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8
+    gap:2
+  },
+  iconText: {
+    fontSize: 12,
+    fontFamily: 'Cochin',
+    fontWeight: 'bold',
   },
   red: {
     color : 'red'
