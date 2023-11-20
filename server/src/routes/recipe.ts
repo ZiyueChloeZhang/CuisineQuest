@@ -16,6 +16,7 @@ router.get('/', async (req: Request, res: Response) => {
 });
 
 router.post('/', async (req: Request, res: Response) => {
+
   try {
     const newRecipe = {
       name: req.body.name,
@@ -29,11 +30,22 @@ router.post('/', async (req: Request, res: Response) => {
       location: req.body.location,
       img: req.body.img};
     
-    console.log("created newRecipe");
     const recipe = await Recipe.create(newRecipe);
 
     return res.status(201).send({_id : recipe._id});
 
+  } catch (error) {
+    res.status(500).send(error); 
+  }
+});
+
+router.get('/:id', async (req: Request, res: Response) => {
+  try {
+    var target = req.params.id;
+    //const recipe = await Recipe.find({ '_id': {$in: target} }); //ignore
+    const recipe = await Recipe.findById(target);
+    console.log(recipe);
+    res.json(recipe);
   } catch (error) {
     res.status(500).send(error); 
   }
