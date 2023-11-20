@@ -1,12 +1,10 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
 interface IRecipe extends Document {
-  
 }
 
 // TODO
 const RecipeSchema: Schema = new Schema({
-  id: { type: String, required: true},
   name: { type: String, required: true },
   time: { hours: { type: Number, required: true }, 
     minutes: { type: Number, required: true } },
@@ -21,6 +19,6 @@ const RecipeSchema: Schema = new Schema({
   location: { type: String, required: true}
 });
 
-const Recipe = mongoose.model<IRecipe>('Recipe', RecipeSchema);
+const Recipe = mongoose.model<IRecipe>('Recipe', RecipeSchema); //model
 
 export default Recipe;
