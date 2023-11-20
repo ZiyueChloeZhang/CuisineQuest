@@ -4,8 +4,8 @@ CuisineQuest is where culinary passion meets community! This project is a unique
 
 ## Collaborators
 
-- [Alexandra Smart]()
-- [Chloe Zhang]()
+- [Alexandra Smart](https://github.com/lexydotcom)
+- [Chloe Zhang](https://github.com/ZiyueChloeZhang)
 - [Linda Chu](https://github.com/lida-chu)
 - [Sabrina Woo](https://github.com/sabrina-woo)
 
